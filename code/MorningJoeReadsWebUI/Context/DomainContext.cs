@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
+
 namespace MorningJoeReadsWebUI.Context
 {
     public class DomainContext : DbContext
