@@ -22,6 +22,7 @@ namespace MorningJoeReadsWebUI.Controllers
         [HttpPost]
         public ActionResult Index(LoginViewModel loginViewModel)
         {
+            
             DomainContext db = new DomainContext();
 
             User user = new User();
@@ -32,8 +33,8 @@ namespace MorningJoeReadsWebUI.Controllers
 
             db.Users.Add(user);
             db.SaveChanges();
-     
-            return View();
+
+            return RedirectToAction("Index", "LoggedInHome");
         }
     }
 }
