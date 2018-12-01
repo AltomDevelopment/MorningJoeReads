@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace MorningJoeReadsWebUI.Controllers
 {
-    public class HomeController : Controller
+    public class LoggedInHomeController : Controller
     {
+        // GET: LoggedInHome
         public ActionResult Index()
         {
             return View();
         }
-
-        
     }
 }
