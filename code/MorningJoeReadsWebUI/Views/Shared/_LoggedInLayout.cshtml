@@ -16,10 +16,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <img src="~/Images/af03fc6642fcd5210a3af609bcaeca2e.png" class="img-center" height="50" width="50" />
             @Html.ActionLink("MorningJoeReads", "Index", "LoggedInHome", new { area = "" }, new { @class = "navbar-brand" })
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">                               
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Logout", "Index", "Logout")</li>
+                <li>@Html.ActionLink("AccountInfo", "Index", "AccountInfo")</li>
             </ul>
         </div>
     </div>

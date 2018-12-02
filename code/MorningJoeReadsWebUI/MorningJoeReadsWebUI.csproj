@@ -154,9 +154,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\DomainContext.cs" />
+    <Compile Include="Controllers\AccountInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoggedInHomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,6 +181,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\af03fc6642fcd5210a3af609bcaeca2e.png" />
     <Content Include="Images\coffee-801781_960_720.jpg" />
     <Content Include="Images\ImageMetaData.xml" />
     <Content Include="Scripts\bootstrap.js" />
@@ -212,6 +215,8 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_LoggedInLayout.cshtml" />
     <Content Include="Views\LoggedInHome\Index.cshtml" />
+    <Content Include="Views\AccountInfo\Index.cshtml" />
+    <Content Include="Views\Logout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
