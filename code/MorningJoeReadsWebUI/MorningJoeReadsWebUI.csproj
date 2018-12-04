@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201812011846353_InitialMigration.Designer.cs">
       <DependentUpon>201812011846353_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812041539489_user update.cs" />
+    <Compile Include="Migrations\201812041539489_user update.Designer.cs">
+      <DependentUpon>201812041539489_user update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Search.cs" />
     <Compile Include="Models\User.cs" />
@@ -238,6 +242,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812011846353_InitialMigration.resx">
       <DependentUpon>201812011846353_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812041539489_user update.resx">
+      <DependentUpon>201812041539489_user update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
