@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using MorningJoeReadsWebUI.Models;
 
 namespace MorningJoeReadsWebUI.ViewModel
 {
-    public class LoginViewModel 
+    public class SignUpViewModel
     {
+        [Required]
+        [StringLength(20, ErrorMessage = "Please enter your first name")]      
+        public string FirstName { get; set; }
+        [Required]
+        [StringLength(20, ErrorMessage = "Please enter your last name")]
+        public string LastName { get; set; }
         [EmailAddress]
         [Required]
         [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
@@ -20,4 +26,5 @@ namespace MorningJoeReadsWebUI.ViewModel
         [Display(Name = "Password")]
         public string PassWord { get; set; }
     }
+    
 }

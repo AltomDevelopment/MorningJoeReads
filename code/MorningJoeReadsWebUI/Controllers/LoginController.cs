@@ -14,28 +14,41 @@ namespace MorningJoeReadsWebUI.Controllers
     public class LoginController : Controller
     {
         // GET: Login       
-        public ActionResult Index()
+        public ActionResult Login()
         {           
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(LoginViewModel loginViewModel)
+        public ActionResult Login(LoginViewModel model)
         {
-            
-            DomainContext db = new DomainContext();
-         
-            User user = new User();
-            user.FirstName = loginViewModel.FirstName;
-            user.LastName = loginViewModel.LastName;
-            user.EmailAddress = loginViewModel.EmailAddress;
-            user.PassWord = loginViewModel.PassWord;
-
-            db.Users.Add(user);
-            db.SaveChanges();
-
-            return RedirectToAction("Index", "LoggedInHome");
+            if (ModelState.IsValid)
+            {
+                using (DomainContext db = new DomainContext())
+                {
+                    var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress) &&
+                    a.PassWord.Equals(model.PassWord)).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        Session["EmailAddress"] = model.EmailAddress.ToString();                       
+                        return RedirectToAction("TryLogin");
+                    }
+                }
+            }
+            return View(model);
         }
- 
+
+        public ActionResult TryLogin()
+        {
+            if (Session["EmailAdress"] != null)
+            {
+                return View("Index", "LoggedInHome");
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
     }
 }

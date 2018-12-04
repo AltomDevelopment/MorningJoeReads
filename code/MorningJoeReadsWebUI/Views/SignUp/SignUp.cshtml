@@ -1,7 +1,7 @@
 ﻿@using System.Web.UI.HtmlControls
-@model MorningJoeReadsWebUI.ViewModel.LoginViewModel
+@model MorningJoeReadsWebUI.ViewModel.SignUpViewModel
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "SignUp";
 }
 @Styles.Render("~/Content/LandingPage.css")
 <!DOCTYPE html>
@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device.width" />
 </head>
 <body>
-    <h2>Please enter your Information</h2>   
-    @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+    <h2>Please enter your Information</h2>
+    @using (Html.BeginForm("SignUp","SignUp", FormMethod.Post))
     {
-        <table cellpadding="0" cellspacing="0">
+        <table cellpadding="10" cellspacing="10" align="center">
             <tr>
                 <th colspan="2" align="center">Login</th>
             </tr>
@@ -50,7 +50,3 @@
     }
 </body>
 </html>
-
-
-
-
