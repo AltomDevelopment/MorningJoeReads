@@ -13,5 +13,10 @@ namespace MorningJoeReadsWebUI.Controllers
         {
             return View();
         }
+
+        public ActionResult NewSearchWindow()
+        {
+            return View();
+        }
     }
 }

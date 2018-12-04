@@ -222,6 +222,7 @@
     <Content Include="Views\LoggedInHome\Index.cshtml" />
     <Content Include="Views\AccountInfo\Index.cshtml" />
     <Content Include="Views\Logout\Index.cshtml" />
+    <Content Include="Views\LoggedInHome\NewSearchWindow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

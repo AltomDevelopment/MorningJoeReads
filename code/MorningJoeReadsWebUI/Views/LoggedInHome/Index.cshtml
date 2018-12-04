@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
 }
+@Styles.Render("~/Content/LandingPage.css")
+<h2>You can add or view searches here!</h2>
 
-<h2>You can use the webpage from here!</h2>
-
+<input type="button" value="Add Search" onclick="window.location.href='@Url.Action("NewSearchWindow")'"/>

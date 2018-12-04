@@ -24,7 +24,7 @@ namespace MorningJoeReadsWebUI.Controllers
         {
             
             DomainContext db = new DomainContext();
-
+         
             User user = new User();
             user.FirstName = loginViewModel.FirstName;
             user.LastName = loginViewModel.LastName;
@@ -36,5 +36,6 @@ namespace MorningJoeReadsWebUI.Controllers
 
             return RedirectToAction("Index", "LoggedInHome");
         }
+ 
     }
 }
