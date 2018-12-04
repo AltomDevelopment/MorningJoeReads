@@ -3,30 +3,37 @@
     ViewBag.Title = "SignUp";
 }
 @Styles.Render("~/Content/LandingPage.css")
+<!DOCTYPE html>
 
-<h2>Login</h2>
-
-@using (Html.BeginForm("Login", "Login", FormMethod.Post))
-{
-    <table cellpadding="10" cellspacing="10" align="center">
-        <tr>
-            <th colspan="2" align="center">Login</th>
-        </tr>       
-        <tr>
-            <td style="color:antiquewhite">Email Address:</td>
-            <td>
-                @Html.TextBoxFor(m => m.EmailAddress)
-            </td>
-        </tr>
-        <tr>
-            <td style="color:antiquewhite">Password:</td>
-            <td>
-                @Html.TextBoxFor(m => m.PassWord)
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Submit" /></td>
-        </tr>
-    </table>
-}
+<html>
+<head>
+    <meta name="viewport" content="width=device.width" />
+</head>
+<body>
+    <h2>Login</h2>
+    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+    {
+        <table cellpadding="10" cellspacing="10" align="center">
+            <tr>
+                <th colspan="2" align="center">Login</th>
+            </tr>
+            <tr>
+                <td style="color:antiquewhite">Email Address:</td>
+                <td>
+                    @Html.TextBoxFor(m => m.EmailAddress)
+                </td>
+            </tr>
+            <tr>
+                <td style="color:antiquewhite">Password:</td>
+                <td>
+                    @Html.TextBoxFor(m => m.PassWord)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
