@@ -5,5 +5,7 @@
 }
 @Styles.Render("~/Content/LandingPage.css")
 <h2>You can add or view searches here!</h2>
-
-<input type="button" value="Add Search" onclick="window.location.href='@Url.Action("NewSearchWindow")'"/>
+<div align="center">
+    <input type="button" id="btnpopup" value="Add Search"
+           onclick="window.location.href='@Url.Action("NewSearchWindow")'" />
+</div>

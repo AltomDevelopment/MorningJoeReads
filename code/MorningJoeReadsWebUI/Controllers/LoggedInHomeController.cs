@@ -18,5 +18,11 @@ namespace MorningJoeReadsWebUI.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult AddSearch()
+        {
+            return HttpNotFound();
+        }
     }
 }

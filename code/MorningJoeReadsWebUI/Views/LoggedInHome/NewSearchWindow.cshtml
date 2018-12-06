@@ -1,8 +1,41 @@
-﻿
+﻿@model MorningJoeReadsWebUI.ViewModel.NewSearchViewModel
 @{
     ViewBag.Title = "NewSearchWindow";
     Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
 }
+@Styles.Render("~/Content/LandingPage.css")
+<!DOCTYPE html>
 
-<h2>NewSearchWindow</h2>
+<html>
+<head>
+    <meta name="viewport" content="width=device.width" />
+</head>
+<body>
+    <h2>Enter Search Information</h2>
+    @using (Html.BeginForm("LoggedInHome", "AddSearch", FormMethod.Post))
+    {
+        <table cellpadding="10" cellspacing="10" align="center">
+            <tr>
+                <th colspan="2" align="center">Login</th>
+            </tr>
+            <tr>
+                <td style="color:antiquewhite">Title of Tag:</td>
+                <td>
+                    @Html.TextBoxFor(m => m.SearchName)
+                </td>
+            </tr>
+            <tr>
+                <td style="color:antiquewhite">Enter Your Search:</td>
+                <td>
+                    @Html.TextBoxFor(m => m.SearchDescription)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
 
