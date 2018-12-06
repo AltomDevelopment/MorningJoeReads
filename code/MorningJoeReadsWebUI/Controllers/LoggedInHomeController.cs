@@ -8,8 +8,7 @@ namespace MorningJoeReadsWebUI.Controllers
 {
     public class LoggedInHomeController : Controller
     {
-        // GET: LoggedInHome
-        [HttpPost]
+        // GET: LoggedInHome       
         public ActionResult Index()
         {
             return View();

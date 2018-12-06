@@ -28,11 +28,13 @@ namespace MorningJoeReadsWebUI.Controllers
                 {
                     var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress) &&
                     a.PassWord.Equals(model.PassWord)).FirstOrDefault();
-                    if (obj != null)
+                    
+                    if (obj.EmailAddress != null && obj.PassWord != null)
                     {
-                        Session["EmailAddress"] = model.EmailAddress.ToString();                       
+                        //Session["EmailAddress"] = model.EmailAddress.ToString();                       
                         return RedirectToAction("TryLogin");
                     }
+                                  
                 }
             }
             return View(model);
@@ -40,14 +42,7 @@ namespace MorningJoeReadsWebUI.Controllers
 
         public ActionResult TryLogin()
         {
-            if (Session["EmailAdress"] != null)
-            {
-                return View("Index", "LoggedInHome");
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+            return RedirectToAction("Index", "LoggedInHome", new { area = "" });           
         }
 
     }
