@@ -7,6 +7,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace MorningJoeReadsWebUI.Controllers
 {
@@ -43,13 +45,20 @@ namespace MorningJoeReadsWebUI.Controllers
 
                     db.Searches.Add(search);
                     db.SaveChanges();
-
+                    
                     return RedirectToAction("Index");
                 }
                 
             }
             return View(model);
 
+        }
+        
+        public void CreateButton(string name)
+        {           
+            Button button = new Button();
+            button.Text = name;
+            
         }
     }
 }
