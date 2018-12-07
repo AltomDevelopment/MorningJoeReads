@@ -9,10 +9,19 @@
 <html>
 <head>
     <meta name="viewport" content="width=device.width" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){            
+            function createButton() {
+                var text = ("Hello!!")
+                $("h2").append(text);
+            }            
+        }); 
+    </script>
 </head>
 <body>
     <h2>Enter Search Information</h2>
-    @using (Html.BeginForm("NewSearchWindow","LoggedInHome", FormMethod.Post))
+    @using (Html.BeginForm("NewSearchWindow", "LoggedInHome", FormMethod.Post))
     {
         <table cellpadding="10" cellspacing="10" align="center">
             <tr>
@@ -31,11 +40,11 @@
                 </td>
             </tr>
             <tr>
-                <td></td>
-                <td><input type="submit" value="Submit" /></td>
+                <td></td>                               
+                <td><input type="submit" value="Submit" onclick="createButton()"/></td>
             </tr>
         </table>    
-    }
+    }   
 </body>
 </html>
 
