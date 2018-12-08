@@ -11,6 +11,10 @@
     <meta name="viewport" content="width=device.width" />
 </head>
 <body>
+    @if (Session["EmailAddress"] == null)
+    {
+        <h2>If you don't have an account you can create one!</h2>
+    }
     <h2>Please enter your Information</h2>
     @using (Html.BeginForm("SignUp","SignUp", FormMethod.Post))
     {

@@ -31,19 +31,29 @@ namespace MorningJoeReadsWebUI.Controllers
                     
                     if (obj.EmailAddress != null && obj.PassWord != null)
                     {
-                        //Session["EmailAddress"] = model.EmailAddress.ToString();                       
+                        Session["EmailAddress"] = Convert.ToString(model.EmailAddress);                       
+                        //return RedirectToAction("TryLogin");
+                    }
+                    if (obj == null)
+                    {
                         return RedirectToAction("TryLogin");
                     }
                                   
                 }
             }
-            return View(model);
+            return RedirectToAction("TryLogin");
         }
 
         public ActionResult TryLogin()
         {
-            return RedirectToAction("Index", "LoggedInHome", new { area = "" });           
+            if (Session["EmailAddress"] == null)
+            {
+                return RedirectToAction("SignUp", "Signup");
+            }
+            else
+            {
+                return RedirectToAction("Index", "LoggedInHome", new { area = "" });
+            }                      
         }
-
     }
 }

@@ -46,7 +46,7 @@ namespace MorningJoeReadsWebUI.Controllers
                     db.Searches.Add(search);
                     db.SaveChanges();
                     
-                    return RedirectToAction("Index");
+                    return RedirectToAction("NewSearchWindow");
                 }
                 
             }
