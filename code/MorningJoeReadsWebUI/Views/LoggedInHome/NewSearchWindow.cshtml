@@ -11,19 +11,25 @@
     <meta name="viewport" content="width=device.width" />
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script>
-        $(function(){            
-            function createButton() {
-                var text = ("Hello!!")
-                $("h2").append(text);
-            }            
-        }); 
+        $(function () { });
+        function submitForm() {
+            $("#AddSearchForm").submit
+            $("#AddSearchForm").load("~/LoggedInHome/Index", function (addButton) {
+
+            });
+            function addButton() {
+                $("#AddSearchDiv").after("<button>Hello</button>")
+            }
+        
+            //after and outside of form, insert button on click of form submit 
+        
     </script>
 </head>
 <body>
     <h2>Enter Search Information</h2>
     @using (Html.BeginForm("NewSearchWindow", "LoggedInHome", FormMethod.Post))
     {
-        <table cellpadding="10" cellspacing="10" align="center">
+        <table id="AddSearchForm" cellpadding="10" cellspacing="10" align="center">
             <tr>
                 <th colspan="2" align="center">Login</th>
             </tr>
@@ -41,10 +47,10 @@
             </tr>
             <tr>
                 <td></td>                               
-                <td><input type="submit" value="Submit" onclick="createButton()"/></td>
+                <td><input type="submit" value="Submit" onclick="submitForm()"/></td>                
             </tr>
         </table>    
-    }   
+    }     
 </body>
 </html>
 
