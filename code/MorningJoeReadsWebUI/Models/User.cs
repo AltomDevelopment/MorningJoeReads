@@ -27,8 +27,7 @@ namespace MorningJoeReadsWebUI.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string PassWord { get; set; }
-
-        public Search Searches { get; set; }
+        
        
     }
 }

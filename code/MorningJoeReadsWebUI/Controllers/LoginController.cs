@@ -28,17 +28,21 @@ namespace MorningJoeReadsWebUI.Controllers
                 {
                     var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress) &&
                     a.PassWord.Equals(model.PassWord)).FirstOrDefault();
-                    
-                    if (obj.EmailAddress != null && obj.PassWord != null)
+                    try
                     {
-                        Session["EmailAddress"] = Convert.ToString(model.EmailAddress);                       
-                        //return RedirectToAction("TryLogin");
+                        if (obj.EmailAddress != null && obj.PassWord != null)
+                        {
+                            Session["EmailAddress"] = Convert.ToString(model.EmailAddress);
+                            //return RedirectToAction("TryLogin");
+                        }
                     }
-                    if (obj == null)
+                    catch (NullReferenceException)
                     {
-                        return RedirectToAction("TryLogin");
-                    }
-                                  
+                        if (obj == null)
+                        {
+                            return RedirectToAction("TryLogin");
+                        }
+                    }               
                 }
             }
             return RedirectToAction("TryLogin");

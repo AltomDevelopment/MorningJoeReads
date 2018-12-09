@@ -7,13 +7,13 @@ namespace MorningJoeReadsWebUI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class userupdate : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(userupdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812041539489_user update"; }
+            get { return "201812090043106_initial"; }
         }
         
         string IMigrationMetadata.Source

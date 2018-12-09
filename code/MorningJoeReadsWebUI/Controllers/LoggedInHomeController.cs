@@ -42,6 +42,7 @@ namespace MorningJoeReadsWebUI.Controllers
                     search.SearchDescription = model.SearchDescription;
                     search.DateCreated = DateTime.Now;
                     search.TimesViewed = 0;
+                    Session["SearchName"] = Convert.ToString(model.SearchName);
 
                     db.Searches.Add(search);
                     db.SaveChanges();
@@ -52,13 +53,6 @@ namespace MorningJoeReadsWebUI.Controllers
             }
             return View(model);
 
-        }
-        
-        public void CreateButton(string name)
-        {           
-            Button button = new Button();
-            button.Text = name;
-            
         }
     }
 }

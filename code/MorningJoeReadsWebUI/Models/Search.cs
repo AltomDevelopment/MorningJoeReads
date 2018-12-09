@@ -13,8 +13,7 @@ namespace MorningJoeReadsWebUI.Models
         public string SearchName { get; set; }
         public DateTime DateCreated { get; set; }
         public int TimesViewed { get; set; }
-
-        public ICollection<User> Users { get; set; }
-
+        public User Users { get; set; }
+        
     }
 }

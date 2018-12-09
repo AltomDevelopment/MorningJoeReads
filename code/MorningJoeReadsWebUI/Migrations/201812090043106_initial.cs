@@ -3,7 +3,7 @@ namespace MorningJoeReadsWebUI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -16,8 +16,11 @@ namespace MorningJoeReadsWebUI.Migrations
                         SearchName = c.String(),
                         DateCreated = c.DateTime(nullable: false),
                         TimesViewed = c.Int(nullable: false),
+                        Users_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Users", t => t.Users_Id)
+                .Index(t => t.Users_Id);
             
             CreateTable(
                 "dbo.Users",
@@ -27,19 +30,16 @@ namespace MorningJoeReadsWebUI.Migrations
                         FirstName = c.String(nullable: false, maxLength: 20),
                         LastName = c.String(nullable: false, maxLength: 20),
                         EmailAddress = c.String(nullable: false),
-                        PassWord = c.String(nullable: false),
-                        Searches_Id = c.Int(),
+                        PassWord = c.String(nullable: false, maxLength: 100),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Searches", t => t.Searches_Id)
-                .Index(t => t.Searches_Id);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Users", "Searches_Id", "dbo.Searches");
-            DropIndex("dbo.Users", new[] { "Searches_Id" });
+            DropForeignKey("dbo.Searches", "Users_Id", "dbo.Users");
+            DropIndex("dbo.Searches", new[] { "Users_Id" });
             DropTable("dbo.Users");
             DropTable("dbo.Searches");
         }
