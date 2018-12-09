@@ -33,7 +33,6 @@ namespace MorningJoeReadsWebUI.Controllers
                         if (obj.EmailAddress != null && obj.PassWord != null)
                         {
                             Session["EmailAddress"] = Convert.ToString(model.EmailAddress);
-                            //return RedirectToAction("TryLogin");
                         }
                     }
                     catch (NullReferenceException)
