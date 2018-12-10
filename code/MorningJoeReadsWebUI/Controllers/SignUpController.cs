@@ -24,8 +24,7 @@ namespace MorningJoeReadsWebUI.Controllers
             {
                 using (DomainContext db = new DomainContext())
                 {
-                    var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress) &&
-                    a.PassWord.Equals(model.PassWord)).FirstOrDefault();
+                    var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress));
                     if (obj == null)
                     {
                         User user = new User();
@@ -37,11 +36,16 @@ namespace MorningJoeReadsWebUI.Controllers
                         db.Users.Add(user);
                         db.SaveChanges();
 
-                        return RedirectToAction(actionName: "Login", controllerName: "Login");
+                        return RedirectToAction(actionName: "Index", controllerName: "Login");
+                    }
+                    else if(obj != null)
+                    {
+                        model.SignupErrorMessage = "An account already exists with this email address";
+                        return View("Signup", model);
                     }
                 }                
             }
-            return View(model);                     
+            return View("Signup");                     
         }           
     }       
 }

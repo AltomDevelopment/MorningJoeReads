@@ -9,22 +9,25 @@ namespace MorningJoeReadsWebUI.ViewModel
 {
     public class SignUpViewModel
     {
-        [Required]
-        [StringLength(20, ErrorMessage = "Please enter your first name")]      
+        [Required(ErrorMessage = "Please enter your first name")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
-        [Required]
-        [StringLength(20, ErrorMessage = "Please enter your last name")]
+
+        [Required(ErrorMessage = "Please enter your last name")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        [EmailAddress]
-        [Required]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
-            ErrorMessage = "Must be a valid Email Address")]
+
+        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Must be a valid Email Address")]
+        [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+
+        [Required(ErrorMessage = "Must be a valid Password")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string PassWord { get; set; }
+
+        public string SignupErrorMessage { get; set; }
     }
     
 }
