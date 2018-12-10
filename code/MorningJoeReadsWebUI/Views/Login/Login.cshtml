@@ -11,29 +11,33 @@
 </head>
 <body>
     <h2>Login</h2>
-    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
-    {
-        <table cellpadding="10" cellspacing="10" align="center">
-            <tr>
-                <th colspan="2" align="center">Login</th>
-            </tr>
-            <tr>
-                <td style="color:antiquewhite">Email Address:</td>
-                <td>
-                    @Html.TextBoxFor(m => m.EmailAddress)
-                </td>
-            </tr>
-            <tr>
-                <td style="color:antiquewhite">Password:</td>
-                <td>
-                    @Html.TextBoxFor(m => m.PassWord)
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Submit" /></td>
-            </tr>
-        </table>
-    }
+    <div style="background-color:black; width:300px; height:150px; 
+        align-items:center; justify-content:center;"  >
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+        {
+            <table cellpadding="10" cellspacing="10" align="center">
+                <tr>
+                    <td style="color:antiquewhite">
+                        @Html.LabelFor(m => m.EmailAddress)
+                    </td>
+                    <td>
+                        @Html.EditorFor(m => m.EmailAddress)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:antiquewhite">
+                        @Html.LabelFor(m => m.PassWord)
+                    </td>
+                    <td>
+                        @Html.EditorFor(m => m.PassWord)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+         }
+    </div>
 </body>
 </html>
