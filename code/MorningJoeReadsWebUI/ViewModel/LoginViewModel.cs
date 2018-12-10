@@ -11,16 +11,16 @@ namespace MorningJoeReadsWebUI.ViewModel
     public class LoginViewModel 
     {
         
-        [Required]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
-            ErrorMessage = "Must be a valid Email Address")]
+        [Required(ErrorMessage = "Email Address is required")]
         [DataType(DataType.EmailAddress)]
-        [DisplayName("Email Address ")]
+        [DisplayName("Email Address")]
         public string EmailAddress { get; set; }
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+
+        [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
-        [DisplayName("Password ")]
+        [DisplayName("Password")]
         public string PassWord { get; set; }
-    }
+
+        public string LoginErrorMessage { get; set; }
+    } 
 }

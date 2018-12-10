@@ -28,35 +28,14 @@ namespace MorningJoeReadsWebUI.Controllers
                 {
                     var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress) &&
                     a.PassWord.Equals(model.PassWord)).FirstOrDefault();
-                    try
+                    if (obj == null)
                     {
-                        if (obj.EmailAddress != null && obj.PassWord != null)
-                        {
-                            Session["EmailAddress"] = Convert.ToString(model.EmailAddress);
-                        }
-                    }
-                    catch (NullReferenceException)
-                    {
-                        if (obj == null)
-                        {
-                            return RedirectToAction("TryLogin");
-                        }
+                        model.LoginErrorMessage = "Wrong Email Address or Password";
+                        return View("Index", model);
                     }               
                 }
             }
-            return RedirectToAction("TryLogin");
-        }
-
-        public ActionResult TryLogin()
-        {
-            if (Session["EmailAddress"] == null)
-            {
-                return RedirectToAction("SignUp", "Signup");
-            }
-            else
-            {
-                return RedirectToAction("Index", "LoggedInHome", new { area = "" });
-            }                      
+            return View("Index");
         }
     }
 }

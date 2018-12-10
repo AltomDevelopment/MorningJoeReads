@@ -17,7 +17,7 @@
 <body>
     <h2>Login</h2>
     <div id="login_div">
-        @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
+        @using (Html.BeginForm("Authorize","Login", FormMethod.Post))
         {
             <table id="login_table "cellpadding="10" cellspacing="10" align="center">
                 <tr>
@@ -29,11 +29,24 @@
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(m => m.EmailAddress)</td>
+                </tr>
+                <tr>
                     <td style="color:antiquewhite">
                         @Html.LabelFor(m => m.PassWord)
                     </td>
                     <td>
                         @Html.EditorFor(m => m.PassWord)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(m => m.PassWord)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">@Html.DisplayFor(m => m.LoginErrorMessage)</label>
                     </td>
                 </tr>
                 <tr>
