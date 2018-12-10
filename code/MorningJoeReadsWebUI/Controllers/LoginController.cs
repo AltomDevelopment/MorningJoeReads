@@ -14,13 +14,13 @@ namespace MorningJoeReadsWebUI.Controllers
     public class LoginController : Controller
     {
         // GET: Login       
-        public ActionResult Login()
+        public ActionResult Index()
         {           
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(LoginViewModel model)
+        public ActionResult Authorize(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
