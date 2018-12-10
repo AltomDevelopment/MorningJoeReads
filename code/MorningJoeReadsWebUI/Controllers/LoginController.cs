@@ -26,16 +26,22 @@ namespace MorningJoeReadsWebUI.Controllers
             {
                 using (DomainContext db = new DomainContext())
                 {
-                    var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress) &&
+                    var userDetails = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress) &&
                     a.PassWord.Equals(model.PassWord)).FirstOrDefault();
-                    if (obj == null)
+                    if (userDetails == null)
                     {
                         model.LoginErrorMessage = "Wrong Email Address or Password";
                         return View("Index", model);
-                    }               
+                    }
+                    else
+                    {
+                        Session["UserID"] = userDetails.Id;
+                        return RedirectToAction("Index", "LoggedInHome");
+                    }
                 }
             }
             return View("Index");
+            
         }
     }
 }
