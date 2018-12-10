@@ -24,7 +24,7 @@ namespace MorningJoeReadsWebUI.Controllers
             {
                 using (DomainContext db = new DomainContext())
                 {
-                    var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress));
+                    var obj = db.Users.Where(a => a.EmailAddress.Equals(model.EmailAddress)).FirstOrDefault();
                     if (obj == null)
                     {
                         User user = new User();
