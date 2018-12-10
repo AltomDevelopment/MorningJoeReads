@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td>@Html.ValidationMessageFor(m => m.EmailAddress)</td>
+                    <td style="color:red">@Html.ValidationMessageFor(m => m.EmailAddress)</td>
                 </tr>
                 <tr>
                     <td style="color:antiquewhite">
@@ -42,11 +42,12 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td>@Html.ValidationMessageFor(m => m.PassWord)</td>
+                    <td style="color:red">@Html.ValidationMessageFor(m => m.PassWord)</td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <label class="field-validation-error">@Html.DisplayFor(m => m.LoginErrorMessage)</label>
+                        <label class="field-validation-error" style="color:red">
+                        @Html.DisplayFor(m => m.LoginErrorMessage)</label>
                     </td>
                 </tr>
                 <tr>
