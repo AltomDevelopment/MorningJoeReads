@@ -21,11 +21,7 @@
     {
     <table id="AddSearchForm" cellpadding="10" cellspacing="10" align="center">
         <tr>
-            <th colspan="2" align="center">Login</th>
-        </tr>
-        <tr>
-            <td style="color:antiquewhite">Title of Tag:</td>
-            <td>
+            <td style="color:antiquewhite">
                 @Html.LabelFor(m => m.SearchName)
             </td>
             <td>
@@ -36,8 +32,7 @@
             <td style="color:red">@Html.ValidationMessageFor(m => m.SearchName)</td>
         </tr>
         <tr>
-            <td style="color:antiquewhite">Enter Your Search:</td>
-            <td>
+            <td style="color:antiquewhite">
                 @Html.LabelFor(m => m.SearchDescription)
             </td>
             <td>
