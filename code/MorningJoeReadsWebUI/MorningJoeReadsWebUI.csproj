@@ -177,6 +177,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\NewSearchViewModel.cs" />
+    <Compile Include="ViewModel\SearchButtons.cs" />
     <Compile Include="ViewModel\SignUpViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

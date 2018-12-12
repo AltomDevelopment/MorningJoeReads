@@ -61,5 +61,13 @@ namespace MorningJoeReadsWebUI.Controllers
             return View("NewSearchWindow");
 
         }
+
+        [HttpPost]
+        public ActionResult AddSearchButtons(SearchButtons searchButtons)
+        {
+            DomainContext db = new DomainContext();
+
+            var obj = db.Searches.Where(a => a.Users)
+        }
     }
 }
