@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
@@ -11,6 +12,7 @@ namespace MorningJoeReadsWebUI.Models
         public int Id { get; set; }
         public string SearchDescription { get; set; }
         public string SearchName { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime DateCreated { get; set; }
         public int TimesViewed { get; set; }
         public User Users { get; set; }
