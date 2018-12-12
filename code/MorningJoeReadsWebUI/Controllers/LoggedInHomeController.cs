@@ -49,16 +49,16 @@ namespace MorningJoeReadsWebUI.Controllers
                     db.Searches.Add(search);
                     db.SaveChanges();
                     
-                    return RedirectToAction("NewSearchWindow");
+                    return RedirectToAction("Index");
                 }
-                if (obj != null)
+                if (obj.SearchName == model.SearchName && obj.SearchDescription == model.SearchDescription)
                 {
                     model.SearchErrorMessage = "This search already exists";
                     return View("NewSearchWindow", model);
                 }
                 
             }
-            return View("Index");
+            return View("NewSearchWindow");
 
         }
     }
