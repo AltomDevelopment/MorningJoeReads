@@ -37,12 +37,14 @@ namespace MorningJoeReadsWebUI.Controllers
                 && a.SearchDescription.Equals(model.SearchDescription)).FirstOrDefault();
                 if (obj == null)
                 {
+                    int matchId = Convert.ToInt32(Session["UserID"]);
+
                     Search search = new Search();
                     search.SearchName = model.SearchName;
                     search.SearchDescription = model.SearchDescription;
                     search.DateCreated = DateTime.Now;
                     search.TimesViewed = 0;
-                    
+                    search.Users = db.Users.Where(a => a.Id.Equals(matchId)).FirstOrDefault();
 
                     db.Searches.Add(search);
                     db.SaveChanges();
@@ -51,7 +53,7 @@ namespace MorningJoeReadsWebUI.Controllers
                 }
                 
             }
-            return View(model);
+            return View("Index");
 
         }
     }
