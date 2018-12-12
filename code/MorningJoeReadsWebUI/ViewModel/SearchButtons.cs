@@ -8,6 +8,6 @@ namespace MorningJoeReadsWebUI.ViewModel
 {
     public class SearchButtons
     {
-        public List<Search> Searches = new List<Search>();
+        public List<Search> Searches { get; set; }
     }
 }
