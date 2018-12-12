@@ -51,6 +51,11 @@ namespace MorningJoeReadsWebUI.Controllers
                     
                     return RedirectToAction("NewSearchWindow");
                 }
+                if (obj != null)
+                {
+                    model.SearchErrorMessage = "This search already exists";
+                    return View("NewSearchWindow", model);
+                }
                 
             }
             return View("Index");
