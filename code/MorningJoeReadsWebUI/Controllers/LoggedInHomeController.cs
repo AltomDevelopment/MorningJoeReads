@@ -26,7 +26,7 @@ namespace MorningJoeReadsWebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult NewSearchWindow(NewSearchViewModel model)
+        public ActionResult UpdateSearchData(NewSearchViewModel model)
         {
 
             if (ModelState.IsValid)
