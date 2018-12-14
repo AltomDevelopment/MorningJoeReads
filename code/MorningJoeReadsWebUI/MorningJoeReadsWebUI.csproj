@@ -171,8 +171,11 @@
     <Compile Include="Migrations\201812121252472_update1.Designer.cs">
       <DependentUpon>201812121252472_update1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812140326191_rollbackdb.cs" />
+    <Compile Include="Migrations\201812140326191_rollbackdb.Designer.cs">
+      <DependentUpon>201812140326191_rollbackdb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Buttons.cs" />
     <Compile Include="Models\Search.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812121252472_update1.resx">
       <DependentUpon>201812121252472_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812140326191_rollbackdb.resx">
+      <DependentUpon>201812140326191_rollbackdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
