@@ -70,6 +70,10 @@ namespace MorningJoeReadsWebUI.Controllers
 
             searchButtons.Searches = db.Searches.Where(a => a.Users.Id.Equals(matchId)).ToList();
 
+            Buttons NewButtons = new Buttons();
+            NewButtons.Searches = searchButtons.Searches;
+            
+
             return View("Index");
         }
     }

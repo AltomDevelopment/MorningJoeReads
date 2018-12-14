@@ -7,6 +7,7 @@ namespace MorningJoeReadsWebUI.Models
 {
     public class Buttons
     {
+        public int ID { get; set; }
         public List<Search> Searches { get; set; }
         public User User { get; set; }
     }

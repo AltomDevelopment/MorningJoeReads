@@ -17,5 +17,6 @@ namespace MorningJoeReadsWebUI.Context
 
         public DbSet<User> Users { get; set; }
         public DbSet<Search> Searches { get; set; }
+        public DbSet<Buttons> Buttons { get; set; }
     }
 }
