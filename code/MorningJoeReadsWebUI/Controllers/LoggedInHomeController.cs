@@ -38,18 +38,18 @@ namespace MorningJoeReadsWebUI.Controllers
                 if (obj == null)
                 {
                     int matchId = Convert.ToInt32(Session["UserID"]);
-
+                    
                     Search search = new Search();
                     search.SearchName = model.SearchName;
                     search.SearchDescription = model.SearchDescription;
                     search.DateCreated = DateTime.Now;
                     search.TimesViewed = 0;
                     search.Users = db.Users.Where(a => a.Id.Equals(matchId)).FirstOrDefault();
-
+                    
                     db.Searches.Add(search);
                     db.SaveChanges();
                     
-                    return RedirectToAction("AddSearches");
+                    return RedirectToAction("Index");
                 }
                 if (obj.SearchName == model.SearchName && obj.SearchDescription == model.SearchDescription)
                 {
@@ -60,17 +60,6 @@ namespace MorningJoeReadsWebUI.Controllers
             }
             return View("NewSearchWindow");
 
-        }
-        
-        public ActionResult AddSearches(SearchButtons searchButtons)
-        {
-            DomainContext db = new DomainContext();
-
-            int matchId = Convert.ToInt32(Session["UserID"]);
-
-            searchButtons.Searches = db.Searches.Where(a => a.Users.Id.Equals(matchId)).ToList();
-            
-            return View("Index");
         }
     }
 }
