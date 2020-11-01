@@ -1,4 +1,4 @@
-﻿@model MorningJoeReadsWebUI.Models.Search
+﻿@model IEnumerable<MorningJoeReadsWebUI.Models.Search>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
@@ -8,7 +8,20 @@
 <div align="center" id="AddSearchDiv">
     <input type="button" id="btnpopup" value="Add Search"
            onclick="window.location.href='@Url.Action("NewSearchWindow")'" />
+    
+    <ul>
+        @foreach (var x in Model)
+        { 
+            <li>
+                <button type="button">@x.SearchName</button>
+            </li>
+        }
+    </ul>
 </div>
+
+
+
+
 
 
 

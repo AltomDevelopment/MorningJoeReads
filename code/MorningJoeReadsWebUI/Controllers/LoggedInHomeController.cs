@@ -20,6 +20,17 @@ namespace MorningJoeReadsWebUI.Controllers
             return View();
         }
 
+        public Button CreateDynamicButton()
+        {
+            DomainContext domainContext = new DomainContext();
+            Button button = new Button();
+
+            string buttonName = domainContext.Searches.Select(a => a.SearchName).FirstOrDefault();
+
+            button.Text = buttonName;
+            return button;
+        }
+
         public ActionResult NewSearchWindow()
         {
             return View();
@@ -61,5 +72,6 @@ namespace MorningJoeReadsWebUI.Controllers
             return View("NewSearchWindow");
 
         }
+        
     }
 }
